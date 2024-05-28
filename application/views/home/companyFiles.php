@@ -1,6 +1,4 @@
-
-
-  <!-- Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper"  >
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -9,21 +7,57 @@
           <div class="col-sm-6" >
             <h1>Company files</h1>
           </div>
-          <div class="col-sm-6">
-            <a href="" class="breadcrumb float-sm-right">
-            <button class="btn btn-sm btn-outline-primary">Tambah folder</button>
-            </a>
+          <div class="col-sm-6 ">
+            <button type="button" class="btn btn-outline-primary btn-sm float-sm-right m-1" data-toggle="modal" data-target="#exampleModal">
+              Tambah folder
+            </button>
+            <button type="button" class="btn btn-outline-success btn-sm float-sm-right m-1" data-toggle="modal" data-target="#exampleModal">
+              Upload file
+            </button>
+            <button type="button" class="btn btn-outline-warning btn-sm float-sm-right m-1" data-toggle="modal" data-target="#exampleModal">
+              Upload folder
+            </button>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
+
+<!-- Modal tambah folder-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Tambah Folder</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nama folder</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Deskripsi</label>
+                  <textarea name="deskripsi" class="form-control" cols="10" rows="5" id=""></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+          </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Main content -->
     <section class="content">
     
       <!-- Default box -->
       <div class="card">
-       
         <div class="card-header">
           <h3 class="card-title">Title</h3>
 

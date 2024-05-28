@@ -30,4 +30,20 @@ class Home extends CI_Controller {
 		$this->load->view('home/companyFiles');
 		$this->load->view('templates/footer');
 	}
+
+	public function userGroup() {
+		$this->load->view('templates/header');
+        $this->load->view('templates/topbar');
+        $this->load->view('templates/sidebar');
+		$this->load->view('home/userGroup');
+		$this->load->view('templates/footer');
+	}
+
+	public function user() {
+		$this->load->view('templates/header');
+        $this->load->view('templates/topbar');
+        $this->load->view('templates/sidebar');
+		$this->load->view('home/user');
+		$this->load->view('templates/footer');
+	}
 }

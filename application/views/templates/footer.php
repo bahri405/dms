@@ -21,8 +21,7 @@
 <script src="<?= base_url('assets/vendor/'); ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('assets/vendor/'); ?>dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?= base_url('assets/vendor/'); ?>dist/js/demo.js"></script>
+
 
 <!-- data table -->
 <script scr="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
