@@ -1,10 +1,20 @@
 
+              </div>
+            <!-- /.card-body -->
+        <!-- /.card-footer-->
+        </div>
+      <!-- /.card -->
 
-<footer class="main-footer">
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
+      
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    
   </footer>
 
   <!-- Control Sidebar -->
@@ -23,18 +33,39 @@
 <script src="<?= base_url('assets/vendor/'); ?>dist/js/adminlte.min.js"></script>
 
 
-<!-- data table -->
-<script scr="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
-<script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap4.js"></script>
-<script>
-  // let table = new DataTable('#myTable');
-  new DataTable('#example');
-  // $(function () {
-  //       $("#myTable").DataTable();
-  //   });
+<!-- DataTables  & Plugins -->
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/jszip/jszip.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/pdfmake/pdfmake.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/pdfmake/vfs_fonts.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+<!-- data dables -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
 </script>
+
+
 </body>
 </html>
