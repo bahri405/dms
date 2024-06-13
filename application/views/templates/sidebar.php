@@ -1,10 +1,20 @@
-
+<!-- nav link -->
+<ul class="navbar-nav">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">  
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item  mx-3 d-none d-sm-inline-block">
+        <a href="<?= base_url('user'); ?>" class="nav-link text-dark">Home</a>
+      </li>
+  </nav>
+</ul>  
 
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary bg-info elevation-4">
     <!-- Brand Logo -->
-    <a href="<?= base_url('home'); ?>" class="brand-link">
-      <img src="<?= base_url('assets/img/logo2.png'); ?>" alt="logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="<?= base_url('user'); ?>" class="brand-link">
+      <img src="<?= base_url('assets/img/logo.jpg'); ?>" alt="logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">DiaryCoffee</span>
     </a>
 
@@ -50,23 +60,32 @@
               </p>
             </a>
           </li>
-      <?php endif ?>
+      <?php elseif($_SESSION['role_id'] == 2): ?>
           <li class="nav-item">
-            <a href="<?= base_url('user'); ?>" class="nav-link">
-              <i class="nav-icon fas fa-coffee"></i>
+            <a href="<?= base_url('user/profile'); ?>" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
               <p>
                 Profile
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('user'); ?>" class="nav-link">
-              <i class="nav-icon fas fa-coffee"></i>
+            <a href="<?= base_url('user/edit'); ?>" class="nav-link">
+              <i class="nav-icon fas fa-user-edit"></i>
               <p>
-                Kedai
+                Edit Profile
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?= base_url('user/kedai'); ?>" class="nav-link">
+              <i class="nav-icon fas fa-coffee"></i>
+              <p>
+                Daftar Kedai
+              </p>
+            </a>
+          </li>
+          <?php endif ?>
           <li class="nav-item">
             <a href="<?= base_url('auth/logout'); ?>" class="nav-link bg-danger">
               <i class="nav-icon fas fa-sign-out-alt"></i>
@@ -85,25 +104,14 @@
    <!-- Content Wrapper. Contains page content -->
    <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1><?= $title; ?></h1>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
     <!-- Main content -->
     <section class="content">
 
       <!-- Default box -->
-      <div class="card">
-        <div class="card-header">
+      <div class="card mt-3 ">
+        <div class="card-header mb-3">
           <h3 class="card-title"><?= $title; ?></h3>
-
-          <div class="card-tools">
+          <div class="card-tools ">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
               <i class="fas fa-minus"></i>
             </button>
@@ -112,8 +120,5 @@
             </button>
           </div>
         </div>
-        <div class="card-body">
-          
-        </div>
+        
         <!-- /.card-body -->
- 

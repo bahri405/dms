@@ -4,9 +4,9 @@
       <a href="<?= base_url('kategori/tambah'); ?>">
       <button class="btn btn-sm btn-info mb-2" >Tambah data</button>
       </a>
-      
-                <table class="table table-bordered table-hover" id="example2" >
-                <thead ">
+
+                <table class="table table-bordered table-hover" >
+                <thead>
                   <tr>
                     <th scope="col">No</th>
                     <th scope="col">Nama Kategori</th>

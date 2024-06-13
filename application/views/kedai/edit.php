@@ -23,16 +23,42 @@
             <?= form_error('alamat','<div class="text-small text-danger">' , '</div>'); ?>
         </div>
         <div class="form-group">
-            <label >Poster</label>
-            <input type="file" name="poster" value="<?= $kedai['poster']; ?>" class="form-control">
-            <img  src="<?= base_url(). '/assets/img/'. $kedai['poster']; ?>" class="card-img-top form-control mt-2 img-fluid" style="height: 100px; width:100px; object-fit:center;">
-            <?= form_error('poster','<div class="text-small text-danger">' , '</div>'); ?>
-        </div>
-        <div class="form-group">
             <label >Desc</label>
             <textarea name="bio"  class="form-control" ><?= $kedai['bio']; ?></textarea>
             <?= form_error('bio','<div class="text-small text-danger">' , '</div>'); ?>
         </div>
+        <div class="form-group">
+            <div class="row">
+                    <div class="col-4">
+                        <label >Poster1</label>
+                        <input type="file" name="poster" class="form-control" required>
+                        <div class="col-sm-3">
+                            <img src="<?= base_url('assets/img/') . $kedai['poster']; ?>" style="width: auto; height:200px;" >
+                        </div>
+                        <?= form_error('poster','<div class="text-small text-danger">' , '</div>'); ?>
+                    </div>
+                    
+                    <div class="col-4">
+                        <label >Poster2</label>
+                        <input type="file" name="poster2" class="form-control" required>
+                        <div class="col-sm-3">
+                            <img src="<?= base_url('assets/img/') . $kedai['poster2']; ?>" style="width: auto; height:200px;" >
+                        </div>
+                        <?= form_error('poster2','<div class="text-small text-danger">' , '</div>'); ?>
+                    </div>
+                    
+                    <div class="col-4">
+                        <label >Poster3</label>
+                        <input type="file" name="poster3" class="form-control" required>
+                        <div class="col-sm-3">
+                            <img src="<?= base_url('assets/img/') . $kedai['poster3']; ?>" style="width: auto; height:200px;" >
+                        </div>
+                        <?= form_error('poster','<div class="text-small text-danger">' , '</div>'); ?>
+                    </div>
+                    
+            </div>
+        </div>
+        
         <button type="submit" class="btn btn-primary btn-sm">Edit</button>
         <button type="reset" class="btn btn-secondary btn-sm">Reset</button>
     

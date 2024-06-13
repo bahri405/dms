@@ -1,19 +1,81 @@
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script
-        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"
-        ></script>
-        <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"
-        ></script>
+    <footer id="footer" class="footer">
+        <div class="copyright text-center">
+        <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
 
-        <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-        -->
-    </body>
-    </html>
+            <div class="d-flex flex-column align-items-center align-items-lg-start">
+            <div>
+                © Copyright <strong><span>Kelompok 9 UBSI Kramat98</span></strong>. All Rights Reserved
+            </div>
+            </div>
+
+            <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+
+        </div>
+        </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+<!-- jQuery -->
+<script src="<?= base_url('assets/vendor/'); ?>plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="<?= base_url('assets/vendor/'); ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?= base_url('assets/vendor/'); ?>dist/js/adminlte.min.js"></script>
+
+
+<!-- DataTables  & Plugins -->
+<!-- <script src="<?= base_url('assets/vendor/'); ?>plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/jszip/jszip.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/pdfmake/pdfmake.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/pdfmake/vfs_fonts.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/buttons.colVis.min.js"></script> -->
+
+
+<!-- datatable 2 -->
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+
+<script>
+  new DataTable('#example');
+</script>
+
+
+<!-- form gambar -->
+  <script>
+      $('.costom-file-input').on('change', function(){
+          let fileName = $this.val().split('\\').pop();
+          $($this).next('custom-file-label').addClasss('selected').html(fileName);
+      });
+  </script>
+  
+
+    <!-- Vendor JS Files -->
+    <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/vendor/php-email-form/validate.js'); ?>"></script>
+    <script src="<?= base_url('assets/vendor/aos/aos.js'); ?>"></script>
+    <script src="<?= base_url('assets/vendor/glightbox/js/glightbox.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/vendor/isotope-layout/isotope.pkgd.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/vendor/waypoints/noframework.waypoints.js'); ?>"></script>
+    <script src="<?= base_url('assets/vendor/swiper/swiper-bundle.min.js'); ?>"></script>
+
+    <!-- Main JS File -->
+    <script src="<?= base_url('assets/js/main.js'); ?>"></script>
+    
+</body>
+</html>

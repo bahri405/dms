@@ -1,12 +1,39 @@
+
 <div class="container mb-5">
-    <img src="<?= base_url('assets/img/aestetik1.jpg'); ?>" class="img-fluid rounded mx-auto d-block" style="height: 330px; width:auto">
-    <div class="card-body">
-        <p><?= $kedai['nama']; ?></p>
-        <p>Desc : <?= $kedai['bio']; ?></p>
-        <p >Alamat : <?= $kedai['alamat']; ?></p>
-        <span class="badge badge-info">Kategori  : <?= $kedai['kategori_nama']; ?></span>
+    <!-- caraousel -->
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="<?= base_url('assets/img/').$kedai['poster']; ?>" class="d-block w-100" style="height: 500px;" >
+                </div>
+                <div class="carousel-item">
+                <img src="<?= base_url('assets/img/').$kedai['poster2']; ?>" class="d-block w-100" style="height: 500px;" >
+                </div>
+                <div class="carousel-item">
+                <img src="<?= base_url('assets/img/').$kedai['poster3']; ?>" class="d-block w-100" style="height: 500px;" >
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </button>
+        </div>
+<!-- caraousel end -->
+
+    <div class="row my-3">
+        <div class="col">
+            <h2><?= $kedai['nama']; ?></h2>
+            <p>Alamat : <?= $kedai['alamat']; ?></p>
+            <p>Tentang kedai : <?= $kedai['bio']; ?></p>
+        </div>
     </div>
-    <form action="<?= base_url('review/add_reviews'); ?>" method="post">
+    
+    <?= form_open('kedai/add_review'); ?>
+    <input type="hidden" name="kedai_id" value="<?= $kedai['id']; ?>">
         <div class="form-group">
             <label >Berikan Review</label>
             <textarea name="content" class="form-control" placeholder="Tulis komentar ..."></textarea>
@@ -18,14 +45,39 @@
             <?= form_error('point','<div class="text-small text-danger">' , '</div>'); ?>
         </div>
         <button type="submit" class="btn btn-primary btn-sm">Kirim</button>
-    </form>
-    <h4 class="form-control bg-info my-3">List Review</h4>
-    <div class="media">
-        <img src="<?= base_url('assets/img/aestetik1.jpg'); ?>" class="align-self-start mr-3" style="border-radius: 50%; height:100px; width:100px;">
-        <div class="media-body">
-        <h5 class="mt-0">Top-aligned media</h5>
-        <p>I’m gon’ put her in a coma. You give a hundred reasons why, and you say you're really gonna try. So I sat quietly, agreed politely. Suiting up for my crowning battle. And on my 18th Birthday we got matching tattoos. So très chic, yeah, she's a classic. I am ready for the road less traveled.</p>
-        <p>Point :</p>
+    <?= form_close(); ?>
+
+    <div class="row my-2">
+        <div class="col-4">
+            <?= $this->session->flashdata('pesan'); ?>
+        </div>
     </div>
-</div>
+    
+    <h3 class="mt-3">List Reviews</h3>
+        <?php if (!empty($review)): ?>
+            <div class="row" >
+            <?php foreach ($review as $r): ?>
+                <div class="col-12 my-2" style="border:1px solid black;">
+                    <div class="media mt-1">
+                        <img src="<?= base_url('assets/img/').$r['user_image']; ?>" class="align-self-start mr-3" style="border-radius: 50%; height:100px; width:100px;">
+                        <div class="media-body ">
+                        <h3 class="mt-0"><?= $r['name']; ?></h3>
+                        <hr>
+                        <p class="m-3"><?= $r['content']; ?></p>
+                        <p class="m-3 badge badge-success"><?= $r['point']; ?> / 10</p>
+                        <div class="row d-flex justify-content-end m-1">
+                        <a class="badge badge-danger " href="<?= base_url('kedai/hapus_review/'. $r['id'] . '/'. $kedai['id']); ?>">
+                            delete
+                        </a>
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+            </div>
+        <?php else: ?>
+            <p>tidak ada reviews</p>
+        <?php endif; ?>
+    </div>
 </div>

@@ -11,12 +11,13 @@ class Auth extends CI_Controller {
     }
     public function index()
 	{
+        
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
             
         if($this->form_validation->run() == false){
             $data['title'] = 'Login';
-            $this->load->view('templates/header');
+            $this->load->view('templates/header',$data);
             $this->load->view('auth/login',$data);
             $this->load->view('templates/footer');
         }else{
@@ -34,6 +35,7 @@ class Auth extends CI_Controller {
         if($user){
             if(password_verify($password,$user['password'])){
                 $data = [
+                    'user_id' => $user['id'],
                     'email' => $user['email'],
                     'role_id' => $user['role_id'],
                 ];
@@ -67,7 +69,7 @@ class Auth extends CI_Controller {
 
         if($this->form_validation->run() == false ){
             $data['title'] = 'Register';
-            $this->load->view('templates/header');
+            $this->load->view('templates/header',$data);
             $this->load->view('auth/register',$data);
             $this->load->view('templates/footer');
         }else {
@@ -78,6 +80,7 @@ class Auth extends CI_Controller {
             'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
             'image' => 'default.jpg',
             'role_id' => 2,
+            'date_created' => time()
         ];
             $this->db->insert('user', $data);
             $this->session->set_flashdata('pesan','<div class="alert alert-success  mx-2" role="alert">

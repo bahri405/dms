@@ -1,6 +1,5 @@
 
-              </div>
-            <!-- /.card-body -->
+
         <!-- /.card-footer-->
         </div>
       <!-- /.card -->
@@ -10,7 +9,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <footer class="main-footer">
+  <footer class="main-footer" >
     <div class="float-right d-none d-sm-block">
       
     </div>
@@ -34,7 +33,7 @@
 
 
 <!-- DataTables  & Plugins -->
-<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables/jquery.dataTables.min.js"></script>
+<!-- <script src="<?= base_url('assets/vendor/'); ?>plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
@@ -45,10 +44,24 @@
 <script src="<?= base_url('assets/vendor/'); ?>plugins/pdfmake/vfs_fonts.js"></script>
 <script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="<?= base_url('assets/vendor/'); ?>plugins/datatables-buttons/js/buttons.colVis.min.js"></script> -->
+
+
+<!-- datatable 2 -->
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+
+<script>
+  new DataTable('#example');
+</script>
+
+<!-- <script>
+  $(document).ready(function(){
+    $('#example').DataTable();
+  });
+</script> -->
 
 <!-- data dables -->
-<script>
+<!-- <script>
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
@@ -64,8 +77,16 @@
       "responsive": true,
     });
   });
-</script>
+</script> -->
 
+<!-- form gambar -->
+  <script>
+      $('.costom-file-input').on('change', function(){
+          let fileName = $this.val().split('\\').pop();
+          $($this).next('custom-file-label').addClasss('selected').html(fileName);
+      });
+  </script>
+  
 
 </body>
 </html>

@@ -31,7 +31,15 @@
                             </div>
                         </div>
                     </form>
-                <a class="mt-3" href="<?= base_url('auth/register'); ?>" class="text-center">Register a new membership</a>
+                <div class="row">
+                    <div class="col-10">
+                    <a class="mt-3" href="<?= base_url('auth/register'); ?>" class="text-center">Register a new membership</a>
+                    </div>
+                    <div class="col-2">
+                        <a href="<?= base_url('home'); ?>">Home</a>
+                    </div>
+                </div>
+                
                 
             </div>
         </div>
