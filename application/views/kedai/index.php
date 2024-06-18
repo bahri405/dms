@@ -10,9 +10,19 @@
           <div class="card">
             <img  src="<?= base_url(). '/assets/img/'. $item['poster']; ?>" class="card-img-top img-fluid" style="height: 270px; object-fit:center;">
             <div class="card-body">
-              <h3 class="" ><?= $item['nama']; ?></h3>
+              <h3 class="" >
+              <?= substr($item['nama'],0,27) ; ?>
+                <?php if(strlen($item['nama'])> 27): ?>
+                ...
+                <?php endif; ?>
+              </h3>
               <span class="badge badge-info"><?= $item['kategori_nama']; ?></span>
-                  <p class="card-text">Alamat <?= $item['alamat']; ?></p>
+                  <p class="card-text">Alamat 
+                  <?= substr($item['alamat'],0,90) ; ?>
+                  <?php if(strlen($item['alamat'])> 90): ?>
+                  ...
+                  <?php endif; ?>
+                  </p>
                   <a href="<?= base_url('kedai/detail/'); ?><?= $item['id']; ?>" class="text-dark btn btn-outline-secondary btn-block btn-sm">Details</a>
                       <div class="my-2 row">
                           <div class="col">

@@ -90,11 +90,11 @@
         <div class="row justify-content-between gy-4 mt-4">
 
           <div class="col" data-aos="fade-up">
-            <div class="portfolio-description">
-              <h2>This is an example of portfolio details</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
+            <div class="portfolio-description m-0">
+              <h2 class="m-0">Nama Kedai :  <?= $kedai['nama']; ?></h2>
+              <p class="m-0">Lokasi :  <?= $kedai['alamat']; ?></p>
+              <p class="m-0">Deskripsi :  <?= $kedai['bio']; ?></p>
+              <span class="badge badge-info "><?= $kedai['kategori_nama']; ?></span>
             </div>
           </div>
           <h3 class="mt-3">List Reviews</h3>

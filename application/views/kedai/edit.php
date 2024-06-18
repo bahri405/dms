@@ -59,7 +59,7 @@
             </div>
         </div>
         
-        <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+        <button type="submit" class="btn btn-primary btn-sm">Save</button>
         <button type="reset" class="btn btn-secondary btn-sm">Reset</button>
     
     <?= form_close(); ?>

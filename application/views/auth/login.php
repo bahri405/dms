@@ -1,11 +1,11 @@
 
-<div class="continer">
+<div class="continer bg-primary" style="height: 100vh;" >
     <div class="row">
         <div class="mx-auto my-5 col-lg-4">
-            <div class="card">
+            <div class="card my-5 ">
                 <div class="card-body login-card-body">
                 <?= $this->session->flashdata('pesan'); ?>
-                    <p class="login-box-msg">Sign in to start your session</p>
+                    <h3 class="login-box-msg text-dark">Login</h3>
                     <form action="<?= base_url('auth'); ?>" method="post">
                         <div class="input-group mb-3">
                             <input type="text" id="email" name="email" value="<?= set_value('email'); ?>" class="form-control" placeholder="Email">
@@ -31,18 +31,18 @@
                             </div>
                         </div>
                     </form>
-                <div class="row">
+                <div class="row my-3">
                     <div class="col-10">
-                    <a class="mt-3" href="<?= base_url('auth/register'); ?>" class="text-center">Register a new membership</a>
+                    <a class="mt-3" href="<?= base_url('auth/register'); ?>" class="text-center">Daftar Member disini!</a>
                     </div>
                     <div class="col-2">
-                        <a href="<?= base_url('home'); ?>">Home</a>
+                        <a  href="<?= base_url('home'); ?>">Home</a>
                     </div>
                 </div>
-                
                 
             </div>
         </div>
     </div>
+</div>
 </div>
 

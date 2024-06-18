@@ -1,8 +1,10 @@
-<div class="row">
+
+
+<div class="row bg-primary">
     <div class="col-4 mx-auto my-5">
     <div class="card">
         <div class="card-body register-card-body">
-            <p class="login-box-msg">Register a new membership</p>
+            <h3 class="login-box-msg text-dark">Daftar Disini Menjadi Member</h3>
             <form action="<?= base_url('auth/register'); ?>" method="post">
                 
                 <div class="input-group mb-3">
@@ -49,7 +51,7 @@
         <div class="social-auth-links text-center">
         <p>- OR -</p>
         </div>
-        <a href="<?= base_url('auth'); ?>" class="text-center">I already have a membership</a>
+        <a href="<?= base_url('auth'); ?>" class="text-center">Sudah punya akun? Silahkan Login</a>
         </div>
 
         </div>

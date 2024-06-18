@@ -96,7 +96,7 @@ class Auth extends CI_Controller {
         $this->session->set_flashdata('pesan','<div class="alert alert-danger  mx-2" role="alert">
             anda logout .
             </div>');
-            redirect('home');
+            redirect('auth');
     }
 
     

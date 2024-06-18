@@ -153,14 +153,21 @@
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
           <?php foreach ($kedai as $item ) : ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="<?= base_url(). '/assets/img/'. $item->poster; ?>" class="img-fluid" style="width: 100%; height: 500px;">
+              <div>
+                <h3 class="p-1"> 
+                <?= substr($item->nama,0,26) ; ?>
+                <?php if(strlen($item->nama)> 26): ?>
+                ...
+                <?php endif; ?>
+                </h3>
+                <img src="<?= base_url(). '/assets/img/'. $item->poster; ?>" class="img-fluid" style="width: 100%; height: 500px;">
+              </div>
               <div class="portfolio-info">
                 <h4><?= $item->nama; ?></h4>
-                <p><?= $item->kategori_nama; ?></p>
-                <p><?= $item->bio; ?></p>
-                <a href="<?= base_url(). '/assets/img/'. $item->poster2; ?>" title="Kedai <?= $item->nama; ?>" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="<?= base_url(). '/assets/img/'. $item->poster3; ?>" title="Kedai <?= $item->nama; ?>" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="<?= base_url('user/detail_kedai/'); ?><?= $item->id; ?>" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <p class="text-success"><?= $item->kategori_nama; ?></p>
+                <p>Lokasi :  <?= $item->alamat; ?></p>
+                
+                <a href="<?= base_url('user/detail_kedai/'); ?><?= $item->id; ?>" title="More Details" class="details-link"><i class="bi bi-zoom-in"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
           <?php endforeach; ?>

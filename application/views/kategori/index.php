@@ -2,7 +2,7 @@
   
   <div class="container-fluid">
       <a href="<?= base_url('kategori/tambah'); ?>">
-      <button class="btn btn-sm btn-info mb-2" >Tambah data</button>
+      <button class="btn btn-sm btn-info mb-2" >Tambah data kategori</button>
       </a>
 
                 <table class="table table-bordered table-hover" >
@@ -23,7 +23,7 @@
                     <td>
                       <a href="<?= base_url('kategori/edit/'); ?><?= $item['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
                       <a href="<?= base_url('kategori/hapus/'); ?><?= $item['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('yakin dihapus?');">Delete</a>
-                      <a href="<?= base_url('kategori/detail/'); ?><?= $item['id']; ?>" class="btn btn-sm btn-secondary" ">Detail</a>
+                      
                     </td>
                   </tr>
                 </tbody>

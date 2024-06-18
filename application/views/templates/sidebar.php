@@ -11,7 +11,7 @@
 </ul>  
 
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary bg-info elevation-4">
+<aside class="main-sidebar  bg-light elevation-4">
     <!-- Brand Logo -->
     <a href="<?= base_url('user'); ?>" class="brand-link">
       <img src="<?= base_url('assets/img/logo.jpg'); ?>" alt="logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -87,7 +87,7 @@
           </li>
           <?php endif ?>
           <li class="nav-item">
-            <a href="<?= base_url('auth/logout'); ?>" class="nav-link bg-danger">
+            <a href="<?= base_url('auth/logout'); ?>" class="nav-link ">
               <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
                 Logout

@@ -102,10 +102,10 @@
         <div class="row justify-content-between gy-4 mt-4">
 
           <div class="col" data-aos="fade-up">
-            <div class="portfolio-description text-center bg-secondary p-3 rounded-4" style="--bs-bg-opacity: .5;">
-              <h2 class="m-0"><?= $kedai['nama']; ?></h2>
-              <p class="m-0"><?= $kedai['bio']; ?></p>
-              <p class="m-0"><?= $kedai['alamat']; ?></p>
+            <div class="portfolio-description ">
+              <h2 class="m-0">Nama Kedai :  <?= $kedai['nama']; ?></h2>
+              <p class="m-0">Lokasi :  <?= $kedai['alamat']; ?></p>
+              <p class="m-0">Deskripsi :  <?= $kedai['bio']; ?></p>
               <span class="badge badge-info "><?= $kedai['kategori_nama']; ?></span>
             </div>
           </div>
